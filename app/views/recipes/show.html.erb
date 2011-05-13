@@ -1,0 +1,32 @@
+<style media="screen" type="text/css">
+* {
+font-family:Arial, Helvetica, sans-serif;
+
+}
+ body {
+background-color:#ccc;
+background-position:top;
+background-repeat:no-repeat;
+font-size:12px;
+margin:0;
+padding:0;
+}
+</style>
+<p>
+  <b>Title:</b>
+  <%=h @recipe.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @recipe.description %>
+</p>
+
+<p>
+  <b>Instructions:</b>
+  <%=h @recipe.instructions %>
+</p>
+
+
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %>

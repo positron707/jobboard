@@ -1,0 +1,30 @@
+<style media="screen" type="text/css">
+* {
+font-family:Arial, Helvetica, sans-serif;
+
+}
+ body {
+background-color:#ccc;
+background-position:top;
+background-repeat:no-repeat;
+font-size:12px;
+margin:0;
+padding:0;
+}
+</style>
+<h1>New category</h1>
+
+<%= error_messages_for :category %>
+
+<% form_for(@category) do |f| %>
+  <p>
+    <b>Name</b><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', categories_path %>

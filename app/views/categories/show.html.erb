@@ -1,0 +1,22 @@
+
+<style media="screen" type="text/css">
+* {
+font-family:Arial, Helvetica, sans-serif;
+
+}
+ body {
+background-color:#ccc;
+background-position:top;
+background-repeat:no-repeat;
+font-size:12px;
+margin:0;
+padding:0;
+}
+</style><p>
+  <b>Name:</b>
+  <%=h @category.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

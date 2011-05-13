@@ -1,0 +1,63 @@
+<style media="screen" type="text/css">
+* {
+font-family:Arial, Helvetica, sans-serif;
+
+}
+ body {
+background-color:#ccc;
+background-position:top;
+background-repeat:no-repeat;
+font-size:12px;
+margin:0;
+padding:0;
+}
+
+    
+	h1{
+	style = "float: right";
+	}
+
+    pre {
+      background-color: #aaa;
+      padding: 10px;
+      font-size: 11px;
+    }
+
+    a { color: #000; }
+    a:visited { color: #666; }
+    a:hover { color: #fff; background-color:#000; }
+
+</style>
+<h1>Job Listing</h1>
+
+<table style = "width: 100%">
+  <tr>
+    <th>Jobs</th>
+    <th>Category</th>
+    <th>Date</th>
+	<th>Edit/Delete</th>
+  </tr>
+
+<% for recipe in @recipes %>
+  <tr>
+    <td><%= link_to "#{recipe.title}", recipe %>
+	   
+	</td>
+    <td>
+    	<%= link_to "#{recipe.category.name}", { :action => 'index', :category_id => recipe.category.id } %>
+    </td>
+    <td>
+    	<%= h recipe.created_at %>
+    </td>
+	<td>
+	<%= link_to 'Delete',  recipe, :confirm => 'Are you sure?', :method => :delete  %> |
+	<%= link_to 'Edit'%>
+	</td>
+  </tr>
+<% end %>
+</table>
+
+
+<br />
+
+<%= link_to 'Add New Jobs', new_recipe_path %>
